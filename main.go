@@ -1,113 +1,96 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
+
+type Animal interface {
+	Voice()
+	Attack()
+}
 
 func main() {
-	// // manifest type
-	// const greeting string = "Hello World"
-	// var firstName string = "Fazz"
-	// var lastName string = "Track"
-	// // type interface
-	// isMarried := false
+	// basic.Declaration()
+	// basic.Conditional()
+	// basic.Looping()
+	// basic.Collection()
+	// basic.LearnMap()
 
-	// fmt.Println(greeting)
-	// fmt.Printf("%s-%s\n", firstName, lastName)
-	// fmt.Print(isMarried, isMarried)
+	// IIFE => immediately invoked function expression
+	// defer bersifat LIFO (Last in First out)
+	// defer func() {
+	// 	number := 14
+	// 	sent := fmt.Sprintf("%d tahun yang lalu", number)
+	// 	fmt.Println(sent)
+	// }()
+	// defer fmt.Println("Program Berakhir")
 
-	// pengondisian
+	// os.Exit(1) //dipaksa untuk berhenti
 
-	// var username string = "user12"
-	// password := "abcd123"
+	// firstName := "FWG"
+	// lastName := "16"
+	// fullName, _ := setFullName(firstName, lastName)
+	// printFullName(fullName)
+	// pointer.Pointer()
+	// models.Struct()
+	// var gilang = models.User{}
 
-	// if username != "user1" {
-	// 	fmt.Println("username tidak ditemukan")
-	// } else if password != "abcd1234" {
-	// 	fmt.Println("password tidak cocok")
-	// } else {
-	// 	fmt.Println("login berhasil")
-	// }
+	// gilang.Username = "gilang"
+	// gilang.Age = 24
+	// gilang.Address = "Yogya"
+	// gilang.Phone = "+627890123456"
 
-	// perulangan
+	// var text = "Pointer merupakan alamat dari suatu value"
+	// var newPost = models.CreatePost("Pointer", text, gilang)
+	// fmt.Println(newPost.Content)
 
-	// // for => for loop
-	// for i := 1; i <= 5; i++ {
-	// 	fmt.Println("Perulangan ke", i)
-	// }
+	// var newTitle = "Method"
+	// var newContent = "Method merupakan function yang berada didalam Struct"
+	// newPost.EditPost(newTitle, newContent)
 
-	// // for => while loop
-	// var i int8 = 1
-	// for i <= 5 {
-	// 	fmt.Printf("Loop-%d\n", i)
-	// 	i++
-	// }
+	// fmt.Println(newPost)
 
-	// array (value type)
-	// var kendaraan [3]string
-	// kendaraan[0] = "Mobil"
-	// kendaraan[1] = "Becak"
-	// kendaraan[2] = "Motor"
-	// // kendaraan[3] = "Bis"
+	// cat := models.Cat{}
+	// dog := models.Dog{}
 
-	// fmt.Println(kendaraan)
-	// fmt.Println(len(kendaraan))
+	// cat.Sleep()
+	// dog.Attack()
 
-	// var umur = [2]int8{10, 12}
-	// umurSMP := umur
-	// umurSMP[0] = 14
-	// fmt.Println(umur, umurSMP)
+	// animalVoice(cat)
+	// animalVoice(dog)
 
-	// slice (reference type)
-	// var buah = []string{"Mangga", "Semangka", "Melon", "Jambu", "Durian"}
-	// buahFavorite := buah[1:3]
-	// buah[1] = "Pepaya"
-	// buahFavorite[0] = "Pepaya"
-	// fmt.Println(buahFavorite, buah)
+	var variable interface{} = 1
+	// var variable any = 1
 
-	// slice of array
-	// kendaraanku := kendaraan[1:3]
-	// kendaraan[1] = "Kapal"
-	// kendaraanku[0] = "Kapal"
-	// fmt.Println(kendaraanku, kendaraan)
+	fmt.Println(variable)
+	// variable = "satu"
+	// fmt.Println(variable)
+	// variable = true
+	// fmt.Println(variable)
 
-	// for => foreach
-	// for idx, val := range buah {
-	// 	if idx%2 != 0 {
-	// 		fmt.Println(val, "Ganjil")
-	// 		continue
-	// 	}
-	// 	fmt.Println(val, "Genap")
-	// }
-	learnMap()
+	result := 10
 
-	firstName := "FWG"
-	lastName := "16"
-	fullName, _ := setFullName(firstName, lastName)
-	printFullName(fullName)
+	result += variable.(int)
+	fmt.Println(result)
+
+	str := "Hello"
+	str += strconv.Itoa(variable.(int))
+	fmt.Println(str)
+
 }
 
-// return function
-func setFullName(firstName string, lastName string) (string, int) {
-	fullName := firstName + " " + lastName
-	return fullName, 12
+func AnimalVoice(animal Animal) {
+	animal.Voice()
 }
 
-// void function
-func printFullName(fullName string) {
-	fmt.Printf("%s", fullName)
-}
+// // return function
+// func setFullName(firstName string, lastName string) (string, int) {
+// 	fullName := firstName + " " + lastName
+// 	return fullName, 12
+// }
 
-func learnMap() {
-	// Map
-	var response = make(map[string]string)
-	response["status"] = "200"
-	response["message"] = "Sukses"
-	fmt.Println(response["message"])
-
-	data := map[int]string{
-		1: "satu",
-		2: "dua",
-		3: "tiga",
-	}
-	fmt.Println(data[3])
-	fmt.Println(len(response), len(data))
-}
+// // void function
+// func printFullName(fullName string) {
+// 	fmt.Printf("%s\n", fullName)
+// }
