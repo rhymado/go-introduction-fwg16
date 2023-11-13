@@ -1,9 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fwg16/src/intermediate"
 
 type Animal interface {
 	Voice()
@@ -60,24 +57,27 @@ func main() {
 	// animalVoice(cat)
 	// animalVoice(dog)
 
-	var variable interface{} = 1
+	// var variable interface{} = 1
 	// var variable any = 1
 
-	fmt.Println(variable)
+	// fmt.Println(variable)
 	// variable = "satu"
 	// fmt.Println(variable)
 	// variable = true
 	// fmt.Println(variable)
 
-	result := 10
+	// result := 10
 
-	result += variable.(int)
-	fmt.Println(result)
+	// result += variable.(int)
+	// fmt.Println(result)
 
-	str := "Hello"
-	str += strconv.Itoa(variable.(int))
-	fmt.Println(str)
+	// str := "Hello"
+	// str += strconv.Itoa(variable.(int))
+	// fmt.Println(str)
 
+	// intermediate.Routine()
+	// intermediate.Channel()
+	intermediate.Racing()
 }
 
 func AnimalVoice(animal Animal) {
