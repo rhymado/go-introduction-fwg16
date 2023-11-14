@@ -1,6 +1,9 @@
 package main
 
-import "fwg16/src/intermediate"
+import (
+	"fmt"
+	"fwg16/src/intermediate"
+)
 
 type Animal interface {
 	Voice()
@@ -77,7 +80,11 @@ func main() {
 
 	// intermediate.Routine()
 	// intermediate.Channel()
-	intermediate.Racing()
+	// intermediate.Racing()
+	// intermediate.Check()
+	_, _, vol := intermediate.Cube(4)
+	// fmt.Println(area, circ, vol)
+	fmt.Printf("Volume Kubus adalah %.2f", vol)
 }
 
 func AnimalVoice(animal Animal) {
